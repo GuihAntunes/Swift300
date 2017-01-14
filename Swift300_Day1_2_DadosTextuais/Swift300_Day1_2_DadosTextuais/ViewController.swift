@@ -12,13 +12,21 @@ class ViewController: UIViewController {
     
     /*
      
-     É possível salvar dados textuais diretamente em disco para processamento futuro
+     É possível salvar dados textuais diretamente em disco para processamento futuro, este recurso se torna particularmente útil quando é necessário uma persistência na aplicação
      
      */
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let caminhoParaSandBox = NSHomeDirectory()
+        
+        let pathDocuments = (caminhoParaSandBox as NSString)
+        
+        let pathArquivo = (pathDocuments as NSString).appendingPathComponent("arquivo.txt")
+        
     }
 
     override func didReceiveMemoryWarning() {
