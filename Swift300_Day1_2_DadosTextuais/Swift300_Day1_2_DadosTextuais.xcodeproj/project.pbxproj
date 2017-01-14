@@ -39,7 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				434F309D1E2A66BB00BA922D /* Swift300_Day1_2_DadosTextuais */,
-				434F309C1E2A66BB00BA922D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,19 +48,45 @@
 				434F309B1E2A66BB00BA922D /* Swift300_Day1_2_DadosTextuais.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		434F309D1E2A66BB00BA922D /* Swift300_Day1_2_DadosTextuais */ = {
 			isa = PBXGroup;
 			children = (
+				9E1752A41E2AC91E0091BD09 /* Support */,
+				9E1752A31E2AC9190091BD09 /* Images */,
+				9E1752A21E2AC9130091BD09 /* Layout */,
 				434F309E1E2A66BB00BA922D /* AppDelegate.swift */,
 				434F30A01E2A66BB00BA922D /* ViewController.swift */,
-				434F30A21E2A66BB00BA922D /* Main.storyboard */,
-				434F30A51E2A66BB00BA922D /* Assets.xcassets */,
-				434F30A71E2A66BB00BA922D /* LaunchScreen.storyboard */,
-				434F30AA1E2A66BB00BA922D /* Info.plist */,
 			);
 			path = Swift300_Day1_2_DadosTextuais;
+			sourceTree = "<group>";
+		};
+		9E1752A21E2AC9130091BD09 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				434F30A21E2A66BB00BA922D /* Main.storyboard */,
+				434F30A71E2A66BB00BA922D /* LaunchScreen.storyboard */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		9E1752A31E2AC9190091BD09 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				434F30A51E2A66BB00BA922D /* Assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		9E1752A41E2AC91E0091BD09 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				434F309C1E2A66BB00BA922D /* Products */,
+				434F30AA1E2A66BB00BA922D /* Info.plist */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +322,7 @@
 				434F30AF1E2A66BB00BA922D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

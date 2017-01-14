@@ -17,23 +17,41 @@ class ViewController: UIViewController {
      */
     
     
-
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let caminhoParaSandBox = NSHomeDirectory()
         
-        let pathDocuments = (caminhoParaSandBox as NSString)
+        let pathDocuments = (caminhoParaSandBox as NSString).appendingPathComponent("Documents")
         
         let pathArquivo = (pathDocuments as NSString).appendingPathComponent("arquivo.txt")
         
+        print(pathArquivo)
+        
+        let stringParaSerSalva = "\"Os que são loucos o suficiente para achar que podem mudar o mundo são os que de fato mudam\" - Steve Jobs"
+        
+        do{
+            
+            try stringParaSerSalva.write(toFile: pathArquivo, atomically: true, encoding: String.Encoding.utf8)
+            
+        } catch{}
+        
+        // Fazendo o resgate do elemento salvo
+        
+        let stringResgatada = try? String(contentsOfFile: pathArquivo, encoding: .utf8)
+        
+        print("\(stringResgatada)")
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
