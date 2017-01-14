@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift300_Day1_4_Lembretes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-Sx-Ki2">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addNotes:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="AlK-5G-thd"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjn-GN-EmV">
+                                <state key="normal" title="Apagar todos os lembretes"/>
+                                <connections>
+                                    <action selector="eraseNotes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBp-ts-D0r"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Seus lembretes aparecerão aqui" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-vU-aT5">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="520" id="L4q-3M-4fX"/>
+                                    <constraint firstAttribute="width" constant="360" id="iuZ-dg-iuZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MQa-vU-aT5" firstAttribute="top" secondItem="Wjn-GN-EmV" secondAttribute="bottom" constant="20" id="0mC-Wg-7aA"/>
+                            <constraint firstItem="MQa-vU-aT5" firstAttribute="centerX" secondItem="Wjn-GN-EmV" secondAttribute="centerX" id="Ehr-aq-646"/>
+                            <constraint firstItem="iJV-Sx-Ki2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F3b-Vb-HhX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iJV-Sx-Ki2" secondAttribute="trailing" constant="40" id="XTp-mP-lLD"/>
+                            <constraint firstItem="Wjn-GN-EmV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bN9-Dj-tIW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wjn-GN-EmV" secondAttribute="trailing" constant="20" id="iTt-XE-kfI"/>
+                            <constraint firstItem="Wjn-GN-EmV" firstAttribute="centerX" secondItem="iJV-Sx-Ki2" secondAttribute="centerX" id="oVj-7n-z9v"/>
+                            <constraint firstItem="iJV-Sx-Ki2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="omK-Nb-bPA"/>
+                            <constraint firstItem="iJV-Sx-Ki2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="st3-DX-Gxa"/>
+                            <constraint firstItem="Wjn-GN-EmV" firstAttribute="top" secondItem="iJV-Sx-Ki2" secondAttribute="bottom" constant="40" id="vB2-TE-1c6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myDataEntrance" destination="iJV-Sx-Ki2" id="TpS-Fv-e1O"/>
+                        <outlet property="notesList" destination="MQa-vU-aT5" id="OUm-c5-XDW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
