@@ -1,55 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E4m-0H-EPu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mHn-Ps-3jV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Visualizador de PDF-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioQuicklook" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lah-8a-d56">
-                                <state key="normal" title="Begin"/>
-                                <connections>
-                                    <segue destination="NQ3-gE-MKM" kind="show" id="8nt-8Q-pE8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="lah-8a-d56" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QSq-Tt-TIi"/>
-                            <constraint firstItem="lah-8a-d56" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XF1-VE-EjQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Visualizador de PDF" id="msd-tZ-52D">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Zas-tD-nbb"/>
-                    </navigationItem>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1108" y="63.418290854572717"/>
-        </scene>
         <!--Table View Controller-->
         <scene sceneID="5u9-4H-bCa">
             <objects>
                 <tableViewController id="NQ3-gE-MKM" customClass="PDFTableViewController" customModule="DesafioQuicklook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pmm-az-iNn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Pmm-az-iNn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pdf cell" textLabel="05K-Is-kWQ" style="IBUITableViewCellStyleDefault" id="SwU-gI-YK4">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pdfcell" textLabel="05K-Is-kWQ" style="IBUITableViewCellStyleDefault" id="SwU-gI-YK4">
+                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SwU-gI-YK4" id="q5q-sK-cEU">
                                     <frame key="frameInset" width="375" height="43"/>
@@ -65,22 +32,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O6z-9Z-oti">
-                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6z-9Z-oti" id="3d2-fW-leu">
-                                    <frame key="frameInset" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="557-Qy-DtJ">
-                                <rect key="frame" x="0.0" y="180" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="557-Qy-DtJ" id="n3j-PH-5wG">
-                                    <frame key="frameInset" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -88,28 +39,32 @@
                             <outlet property="delegate" destination="NQ3-gE-MKM" id="QeR-xq-NlH"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="bfy-7K-xFK"/>
+                    <connections>
+                        <outlet property="myTableView" destination="Pmm-az-iNn" id="qTq-Hz-TNZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKr-87-qFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.2" y="62.518740629685162"/>
+            <point key="canvasLocation" x="2810.4000000000001" y="62.518740629685162"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hVh-Ar-p7U">
+        <scene sceneID="GdL-l8-mab">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E4m-0H-EPu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mHn-Ps-3jV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2gz-As-OUa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ztS-uv-RTK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4KO-5r-71c"/>
+                        <segue destination="NQ3-gE-MKM" kind="relationship" relationship="rootViewController" id="1gS-zR-CVy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dg9-HC-S8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJC-tH-SiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.80000000000001" y="63.418290854572717"/>
+            <point key="canvasLocation" x="1871.2" y="62.518740629685162"/>
         </scene>
     </scenes>
 </document>

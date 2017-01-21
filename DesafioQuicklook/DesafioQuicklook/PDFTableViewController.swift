@@ -12,6 +12,7 @@ import UIKit
 class PDFTableViewController: UITableViewController, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
 
     // MARK: - Outlets
+    @IBOutlet var myTableView: UITableView!
     
     // MARK: - Propriedades
     
@@ -49,6 +50,17 @@ class PDFTableViewController: UITableViewController, QLPreviewControllerDataSour
     }
     
     // MARK: - Métodos de TableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let quickLook = QLPreviewController()
+        
+        quickLook.delegate = self
+        quickLook.dataSource = self
+        
+        self.navigationController?.pushViewController(quickLook, animated: true)
+        
+    }
 
     // MARK: - Métodos de QLPreviewControllerDataSource
     
@@ -58,7 +70,7 @@ class PDFTableViewController: UITableViewController, QLPreviewControllerDataSour
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         
-        let nomePDF = self.arrayNomePdf[index]
+        let nomePDF = self.arrayNomePdf[self.myTableView.indexPathForSelectedRow?.row ?? 0]
         
         let raizApp = Bundle.main
         
@@ -69,5 +81,9 @@ class PDFTableViewController: UITableViewController, QLPreviewControllerDataSour
         return urlArquivo as QLPreviewItem
         
     }
+    
+    // MARK: - Métodos de QLPreviewControllerDelegate
+    
+    
 
 }

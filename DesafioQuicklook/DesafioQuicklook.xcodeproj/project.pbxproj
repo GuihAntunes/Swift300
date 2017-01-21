@@ -12,7 +12,6 @@
 		43E274711E33D0EC00E26EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E274701E33D0EC00E26EE5 /* Assets.xcassets */; };
 		43E274741E33D0EC00E26EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E274721E33D0EC00E26EE5 /* LaunchScreen.storyboard */; };
 		43E2747F1E33D2CC00E26EE5 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */; };
-		43E274811E33D2DF00E26EE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E274801E33D2DF00E26EE5 /* ViewController.swift */; };
 		43E274851E33D46900E26EE5 /* 5_Conselhos.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274821E33D46900E26EE5 /* 5_Conselhos.pdf */; };
 		43E274861E33D46900E26EE5 /* Identdade da Sua Empresa.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274831E33D46900E26EE5 /* Identdade da Sua Empresa.pdf */; };
 		43E274871E33D46900E26EE5 /* Marketing Digital.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274841E33D46900E26EE5 /* Marketing Digital.pdf */; };
@@ -26,7 +25,6 @@
 		43E274731E33D0EC00E26EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43E274751E33D0EC00E26EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewController.swift; sourceTree = "<group>"; };
-		43E274801E33D2DF00E26EE5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43E274821E33D46900E26EE5 /* 5_Conselhos.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 5_Conselhos.pdf; sourceTree = "<group>"; };
 		43E274831E33D46900E26EE5 /* Identdade da Sua Empresa.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Identdade da Sua Empresa.pdf"; sourceTree = "<group>"; };
 		43E274841E33D46900E26EE5 /* Marketing Digital.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Marketing Digital.pdf"; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				43E2747B1E33D0F500E26EE5 /* Layout */,
 				43E274691E33D0EC00E26EE5 /* AppDelegate.swift */,
 				43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */,
-				43E274801E33D2DF00E26EE5 /* ViewController.swift */,
 			);
 			path = DesafioQuicklook;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43E274811E33D2DF00E26EE5 /* ViewController.swift in Sources */,
 				43E2747F1E33D2CC00E26EE5 /* PDFTableViewController.swift in Sources */,
 				43E2746A1E33D0EC00E26EE5 /* AppDelegate.swift in Sources */,
 			);
