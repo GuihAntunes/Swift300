@@ -6,6 +6,7 @@
 //  Copyright © 2017 Swift. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -34,6 +35,29 @@ class ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func iniciar(_ sender: AnyObject) {
+        
+        DispatchQueue.global().async {
+        
+            for i in 1...10{
+            
+                self.labelCima.text = "\(i)"
+            
+                Thread.sleep(forTimeInterval: 1.0)
+            
+            }
+            
+        }
+        
+        //
+        
+        for i in 1...10{
+            
+            self.labelBaixo.text = "\(i)"
+            
+            Thread.sleep(forTimeInterval: 1.0)
+            
+        }
+        
     }
 
 }
