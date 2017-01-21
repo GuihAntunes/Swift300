@@ -65,7 +65,7 @@ class PDFTableViewController: UITableViewController, QLPreviewControllerDataSour
     // MARK: - Métodos de QLPreviewControllerDataSource
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return self.arrayNomePdf.count
+        return 1
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
