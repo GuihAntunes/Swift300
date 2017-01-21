@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift300_Day2_1_ProcessamentosAssincronos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processamentos Assíncronos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKP-Yz-7d4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="TUy-yj-shd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raD-XZ-bmH">
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="boz-qB-XAl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1C-7S-BLP">
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ceI-Mb-xiu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZj-Zh-leT">
+                                <state key="normal" title="Iniciar"/>
+                                <connections>
+                                    <action selector="iniciar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqm-RI-0Uk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="q1C-7S-BLP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="B9Y-fI-RrN"/>
+                            <constraint firstItem="BZj-Zh-leT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gx1-y0-cje"/>
+                            <constraint firstAttribute="trailing" secondItem="raD-XZ-bmH" secondAttribute="trailing" id="HTC-gI-cRA"/>
+                            <constraint firstAttribute="trailing" secondItem="NKP-Yz-7d4" secondAttribute="trailing" id="KmR-ZB-EKx"/>
+                            <constraint firstItem="NKP-Yz-7d4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xf2-HD-xd6"/>
+                            <constraint firstItem="raD-XZ-bmH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c6R-AX-VhI"/>
+                            <constraint firstItem="NKP-Yz-7d4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hmK-Sx-X5V"/>
+                            <constraint firstAttribute="trailing" secondItem="q1C-7S-BLP" secondAttribute="trailing" id="nFh-qM-OyH"/>
+                            <constraint firstItem="BZj-Zh-leT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qNb-Bf-4Hd"/>
+                            <constraint firstItem="q1C-7S-BLP" firstAttribute="top" secondItem="raD-XZ-bmH" secondAttribute="bottom" constant="8" id="sy5-mj-jO9"/>
+                            <constraint firstItem="raD-XZ-bmH" firstAttribute="top" secondItem="NKP-Yz-7d4" secondAttribute="bottom" id="xaa-AJ-Vj2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iniciar" destination="BZj-Zh-leT" id="p8P-zF-EEk"/>
+                        <outlet property="labelBaixo" destination="q1C-7S-BLP" id="o7v-92-kTJ"/>
+                        <outlet property="labelCima" destination="raD-XZ-bmH" id="FSN-GY-7KT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
