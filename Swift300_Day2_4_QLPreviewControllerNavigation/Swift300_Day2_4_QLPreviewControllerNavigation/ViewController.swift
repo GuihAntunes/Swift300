@@ -65,7 +65,6 @@ class ViewController: UIViewController, QLPreviewControllerDataSource, QLPreview
         
         // Retornando a URL do arquivo
         return urlArquivo as QLPreviewItem
-        
     }
     
     // MARK: - Métodos de QLPreviewControllerDelegate
