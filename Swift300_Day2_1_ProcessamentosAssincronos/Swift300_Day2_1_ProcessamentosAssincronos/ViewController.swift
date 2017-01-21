@@ -39,25 +39,35 @@ class ViewController: UIViewController {
         DispatchQueue.global().async {
         
             for i in 1...10{
+                
+                DispatchQueue.main.async {
             
-                self.labelCima.text = "\(i)"
-            
+                    self.labelCima.text = "\(i)"
+                
+                }
+                
                 Thread.sleep(forTimeInterval: 1.0)
-            
+                    
             }
             
         }
         
-        //
+        // -------------
         
-        for i in 1...10{
+        DispatchQueue.global().async {
+        
+            for i in 1...10{
+                
+                DispatchQueue.main.async {
+                    
+                    self.labelBaixo.text = "\(i)"
+                    
+                }
             
-            self.labelBaixo.text = "\(i)"
+                Thread.sleep(forTimeInterval: 1.0)
             
-            Thread.sleep(forTimeInterval: 1.0)
-            
+            }
         }
-        
     }
 
 }

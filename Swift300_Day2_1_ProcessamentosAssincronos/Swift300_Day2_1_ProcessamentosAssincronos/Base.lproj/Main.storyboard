@@ -67,7 +67,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="iniciar" destination="BZj-Zh-leT" id="p8P-zF-EEk"/>
                         <outlet property="labelBaixo" destination="q1C-7S-BLP" id="o7v-92-kTJ"/>
                         <outlet property="labelCima" destination="raD-XZ-bmH" id="FSN-GY-7KT"/>
                     </connections>
