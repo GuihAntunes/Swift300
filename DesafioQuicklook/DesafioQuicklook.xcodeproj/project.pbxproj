@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43E2746A1E33D0EC00E26EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E274691E33D0EC00E26EE5 /* AppDelegate.swift */; };
+		43E2746F1E33D0EC00E26EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E2746D1E33D0EC00E26EE5 /* Main.storyboard */; };
+		43E274711E33D0EC00E26EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E274701E33D0EC00E26EE5 /* Assets.xcassets */; };
+		43E274741E33D0EC00E26EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E274721E33D0EC00E26EE5 /* LaunchScreen.storyboard */; };
+		43E2747F1E33D2CC00E26EE5 /* PDFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */; };
+		43E274811E33D2DF00E26EE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E274801E33D2DF00E26EE5 /* ViewController.swift */; };
+		43E274851E33D46900E26EE5 /* 5_Conselhos.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274821E33D46900E26EE5 /* 5_Conselhos.pdf */; };
+		43E274861E33D46900E26EE5 /* Identdade da Sua Empresa.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274831E33D46900E26EE5 /* Identdade da Sua Empresa.pdf */; };
+		43E274871E33D46900E26EE5 /* Marketing Digital.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43E274841E33D46900E26EE5 /* Marketing Digital.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43E274661E33D0EC00E26EE5 /* DesafioQuicklook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioQuicklook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E274691E33D0EC00E26EE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43E2746E1E33D0EC00E26EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43E274701E33D0EC00E26EE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43E274731E33D0EC00E26EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43E274751E33D0EC00E26EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTableViewController.swift; sourceTree = "<group>"; };
+		43E274801E33D2DF00E26EE5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43E274821E33D46900E26EE5 /* 5_Conselhos.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 5_Conselhos.pdf; sourceTree = "<group>"; };
+		43E274831E33D46900E26EE5 /* Identdade da Sua Empresa.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Identdade da Sua Empresa.pdf"; sourceTree = "<group>"; };
+		43E274841E33D46900E26EE5 /* Marketing Digital.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Marketing Digital.pdf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43E274631E33D0EC00E26EE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43E2745D1E33D0EB00E26EE5 = {
+			isa = PBXGroup;
+			children = (
+				43E274681E33D0EC00E26EE5 /* DesafioQuicklook */,
+			);
+			sourceTree = "<group>";
+		};
+		43E274671E33D0EC00E26EE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43E274661E33D0EC00E26EE5 /* DesafioQuicklook.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		43E274681E33D0EC00E26EE5 /* DesafioQuicklook */ = {
+			isa = PBXGroup;
+			children = (
+				43E2747D1E33D10200E26EE5 /* Support */,
+				43E2747C1E33D0FD00E26EE5 /* Images */,
+				43E2747B1E33D0F500E26EE5 /* Layout */,
+				43E274691E33D0EC00E26EE5 /* AppDelegate.swift */,
+				43E2747E1E33D2CC00E26EE5 /* PDFTableViewController.swift */,
+				43E274801E33D2DF00E26EE5 /* ViewController.swift */,
+			);
+			path = DesafioQuicklook;
+			sourceTree = "<group>";
+		};
+		43E2747B1E33D0F500E26EE5 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				43E274721E33D0EC00E26EE5 /* LaunchScreen.storyboard */,
+				43E2746D1E33D0EC00E26EE5 /* Main.storyboard */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		43E2747C1E33D0FD00E26EE5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				43E274701E33D0EC00E26EE5 /* Assets.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		43E2747D1E33D10200E26EE5 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				43E274671E33D0EC00E26EE5 /* Products */,
+				43E274821E33D46900E26EE5 /* 5_Conselhos.pdf */,
+				43E274831E33D46900E26EE5 /* Identdade da Sua Empresa.pdf */,
+				43E274841E33D46900E26EE5 /* Marketing Digital.pdf */,
+				43E274751E33D0EC00E26EE5 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43E274651E33D0EC00E26EE5 /* DesafioQuicklook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43E274781E33D0EC00E26EE5 /* Build configuration list for PBXNativeTarget "DesafioQuicklook" */;
+			buildPhases = (
+				43E274621E33D0EC00E26EE5 /* Sources */,
+				43E274631E33D0EC00E26EE5 /* Frameworks */,
+				43E274641E33D0EC00E26EE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesafioQuicklook;
+			productName = DesafioQuicklook;
+			productReference = 43E274661E33D0EC00E26EE5 /* DesafioQuicklook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43E2745E1E33D0EB00E26EE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Swift;
+				TargetAttributes = {
+					43E274651E33D0EC00E26EE5 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 43E274611E33D0EB00E26EE5 /* Build configuration list for PBXProject "DesafioQuicklook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43E2745D1E33D0EB00E26EE5;
+			productRefGroup = 43E274671E33D0EC00E26EE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43E274651E33D0EC00E26EE5 /* DesafioQuicklook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43E274641E33D0EC00E26EE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E274741E33D0EC00E26EE5 /* LaunchScreen.storyboard in Resources */,
+				43E274851E33D46900E26EE5 /* 5_Conselhos.pdf in Resources */,
+				43E274711E33D0EC00E26EE5 /* Assets.xcassets in Resources */,
+				43E274871E33D46900E26EE5 /* Marketing Digital.pdf in Resources */,
+				43E274861E33D46900E26EE5 /* Identdade da Sua Empresa.pdf in Resources */,
+				43E2746F1E33D0EC00E26EE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43E274621E33D0EC00E26EE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E274811E33D2DF00E26EE5 /* ViewController.swift in Sources */,
+				43E2747F1E33D2CC00E26EE5 /* PDFTableViewController.swift in Sources */,
+				43E2746A1E33D0EC00E26EE5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		43E2746D1E33D0EC00E26EE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E2746E1E33D0EC00E26EE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43E274721E33D0EC00E26EE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43E274731E33D0EC00E26EE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43E274761E33D0EC00E26EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43E274771E33D0EC00E26EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43E274791E33D0EC00E26EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesafioQuicklook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.swift.DesafioQuicklook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		43E2747A1E33D0EC00E26EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesafioQuicklook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.swift.DesafioQuicklook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43E274611E33D0EB00E26EE5 /* Build configuration list for PBXProject "DesafioQuicklook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E274761E33D0EC00E26EE5 /* Debug */,
+				43E274771E33D0EC00E26EE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43E274781E33D0EC00E26EE5 /* Build configuration list for PBXNativeTarget "DesafioQuicklook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E274791E33D0EC00E26EE5 /* Debug */,
+				43E2747A1E33D0EC00E26EE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43E2745E1E33D0EB00E26EE5 /* Project object */;
+}
