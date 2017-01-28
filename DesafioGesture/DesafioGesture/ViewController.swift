@@ -75,8 +75,12 @@ class ViewController: UIViewController {
     
     func tripleTapped (_ trippleTap:UITapGestureRecognizer){
         
-        self.littleView.backgroundColor = UIColor(red: (CGFloat(arc4random()%256)/255), green: (CGFloat(
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.littleView.backgroundColor = UIColor(red: (CGFloat(arc4random()%256)/255), green: (CGFloat(
             (arc4random()%256))/255), blue: (CGFloat((arc4random()%256))/255), alpha: 1.0)
+        
+        })
         
     }
     
