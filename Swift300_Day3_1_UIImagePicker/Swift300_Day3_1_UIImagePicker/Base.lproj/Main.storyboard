@@ -18,45 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jk-jv-qSt">
-                                <frame key="frameInset" minY="20" width="185" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jk-jv-qSt">
+                                <color key="backgroundColor" red="0.3529411764705882" green="0.43529411764705883" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="15V-3l-2J3"/>
                                     <constraint firstAttribute="width" constant="185" id="NXL-k0-JX7"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Álbum"/>
                                 <connections>
                                     <action selector="abrirAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sIm-Uo-1BO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKf-Bw-iUY">
-                                <frame key="frameInset" minX="190" minY="20" width="185" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKf-Bw-iUY">
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.43529411759999997" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="aoW-1U-c5E"/>
                                     <constraint firstAttribute="height" constant="120" id="hfp-3r-n7U"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Câmera"/>
                                 <connections>
                                     <action selector="abrirCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vBd-Ov-Mnj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIZ-zG-KS9">
-                                <frame key="frameInset" minY="150" width="185" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIZ-zG-KS9">
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.43529411759999997" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="MwK-jh-uLq"/>
                                     <constraint firstAttribute="height" constant="120" id="Ne3-NZ-XxA"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Salvar Álbum"/>
                                 <connections>
                                     <action selector="salvarAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jtB-bh-Abl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abQ-9K-MDo">
-                                <frame key="frameInset" minX="190" minY="150" width="185" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abQ-9K-MDo">
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.43529411759999997" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="1j0-NW-Ypq"/>
                                     <constraint firstAttribute="height" constant="120" id="j37-n8-Vnk"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Salvar Documents"/>
                                 <connections>
                                     <action selector="salvarDocuments:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTX-m9-fgo"/>
@@ -75,10 +79,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41G-Tc-Tfr">
+                                <color key="backgroundColor" red="0.55294117647058827" green="0.71764705882352942" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="QtZ-xO-ae3"/>
                                     <constraint firstAttribute="width" constant="185" id="U2Z-gP-eJJ"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Recuperar Imagem Salva"/>
                                 <connections>
                                     <action selector="recuperarImagemSalva:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rh-vD-akF"/>
@@ -89,17 +95,17 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oKf-Bw-iUY" secondAttribute="trailing" id="1R9-nB-jVZ"/>
                             <constraint firstItem="41G-Tc-Tfr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3xs-yf-lqf"/>
-                            <constraint firstItem="abQ-9K-MDo" firstAttribute="top" secondItem="oKf-Bw-iUY" secondAttribute="bottom" id="DbO-Yk-hoZ"/>
-                            <constraint firstItem="ZmW-Gz-GCw" firstAttribute="top" secondItem="abQ-9K-MDo" secondAttribute="bottom" constant="8" id="HGL-H5-aVb"/>
+                            <constraint firstItem="abQ-9K-MDo" firstAttribute="top" secondItem="oKf-Bw-iUY" secondAttribute="bottom" constant="10" id="DbO-Yk-hoZ"/>
+                            <constraint firstItem="ZmW-Gz-GCw" firstAttribute="top" secondItem="abQ-9K-MDo" secondAttribute="bottom" constant="20" id="HGL-H5-aVb"/>
                             <constraint firstItem="oKf-Bw-iUY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KLo-WR-0XI"/>
                             <constraint firstItem="7Jk-jv-qSt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="P6N-ww-f9v"/>
                             <constraint firstItem="ZmW-Gz-GCw" firstAttribute="centerX" secondItem="abQ-9K-MDo" secondAttribute="centerX" id="PjT-mv-PFl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="41G-Tc-Tfr" secondAttribute="bottom" constant="100" id="aja-6P-p1G"/>
                             <constraint firstItem="7Jk-jv-qSt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eB8-YQ-abx"/>
                             <constraint firstItem="aIZ-zG-KS9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gfn-KS-d7E"/>
-                            <constraint firstItem="e5U-Nz-tRT" firstAttribute="top" secondItem="aIZ-zG-KS9" secondAttribute="bottom" constant="8" id="o2l-iz-Uyn"/>
+                            <constraint firstItem="e5U-Nz-tRT" firstAttribute="top" secondItem="aIZ-zG-KS9" secondAttribute="bottom" constant="20" id="o2l-iz-Uyn"/>
                             <constraint firstItem="e5U-Nz-tRT" firstAttribute="centerX" secondItem="aIZ-zG-KS9" secondAttribute="centerX" id="pF5-Ld-PzJ"/>
-                            <constraint firstItem="aIZ-zG-KS9" firstAttribute="top" secondItem="7Jk-jv-qSt" secondAttribute="bottom" id="vbY-Zk-1LI"/>
+                            <constraint firstItem="aIZ-zG-KS9" firstAttribute="top" secondItem="7Jk-jv-qSt" secondAttribute="bottom" constant="10" id="vbY-Zk-1LI"/>
                             <constraint firstAttribute="trailing" secondItem="abQ-9K-MDo" secondAttribute="trailing" id="yAV-h2-mt3"/>
                         </constraints>
                     </view>

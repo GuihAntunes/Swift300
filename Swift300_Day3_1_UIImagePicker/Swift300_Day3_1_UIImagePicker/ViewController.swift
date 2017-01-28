@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+// Adotando o protocolo UIImagePickerControllerDelegate e UINavigationControllerDelegate
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
     @IBOutlet weak var imageViewAlbum: UIImageView!
@@ -35,6 +36,9 @@ class ViewController: UIViewController {
         // Iniciando uma instância de ImagePickerController
         let imagePicker = UIImagePickerController()
         
+        // Atribuindo o delegate
+        imagePicker.delegate = self
+        
         // Verificando se o sourceType está disponível
         if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
             // Caso o sourceType esteja disponível
@@ -60,6 +64,29 @@ class ViewController: UIViewController {
         
     }
     @IBAction func abrirCamera(_ sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
+            
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }else{
+            
+            let alerta = UIAlertController(title: "Alerta", message: "A câmera não está disponível, por isso não será possível acessá-la!", preferredStyle: .alert)
+            
+            let acaoOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alerta.addAction(acaoOk)
+            
+            self.present(alerta, animated: true, completion: nil)
+            
+        }
+        
     }
     @IBAction func salvarAlbum(_ sender: AnyObject) {
     }
@@ -67,7 +94,30 @@ class ViewController: UIViewController {
     }
     @IBAction func recuperarImagemSalva(_ sender: AnyObject) {
     }
+    
+    // MARK: - Métodos de UIImagePickerControllerDelegate
+    
+    // Método quando o usuário faz uma seleção no picker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // Resgatando a imagem selecionada pelo usuário
+        let imagemEscolhida = info[UIImagePickerControllerOriginalImage]
+        
+        // Atribuição a nossa imageView
+        self.imageViewAlbum.image = imagemEscolhida as? UIImage ?? nil
+        
+        print("Selecionou uma parada!")
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
 
+    // Método que é disparado quando o usuário cancela a seleção
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Cancelou!")
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 
 
 }
