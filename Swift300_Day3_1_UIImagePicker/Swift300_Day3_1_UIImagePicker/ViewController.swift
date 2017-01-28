@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 // Adotando o protocolo UIImagePickerControllerDelegate e UINavigationControllerDelegate
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -20,7 +22,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        print(pathDocuments)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,10 +93,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     @IBAction func salvarAlbum(_ sender: AnyObject) {
+        
+        if let imagem = self.imageViewAlbum.image {
+            
+            UIImageWriteToSavedPhotosAlbum(imagem, nil, nil, nil)
+            
+        }
+        
     }
     @IBAction func salvarDocuments(_ sender: AnyObject) {
+        
+        if let imagem = self.imageViewAlbum.image {
+        
+            let imagemData = UIImagePNGRepresentation(imagem)
+            
+            if let dataTemp = imagemData {
+                try? dataTemp.write(to: URL(fileURLWithPath: pathArquivo))
+            }
+            
+        }
+        
     }
     @IBAction func recuperarImagemSalva(_ sender: AnyObject) {
+        
+        let imagem = UIImage(contentsOfFile: pathArquivo)
+        
+        self.imageViewDocuments.image = imagem
+        
     }
     
     // MARK: - Métodos de UIImagePickerControllerDelegate
