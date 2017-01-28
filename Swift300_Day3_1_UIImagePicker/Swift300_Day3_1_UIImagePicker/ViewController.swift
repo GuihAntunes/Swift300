@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var imageViewAlbum: UIImageView!
+    @IBOutlet weak var imageViewDocuments: UIImageView!
+    
+    // MARK: - Properties
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +26,48 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    @IBAction func abrirAlbum(_ sender: AnyObject) {
+        
+        // Iniciando uma instância de ImagePickerController
+        let imagePicker = UIImagePickerController()
+        
+        // Verificando se o sourceType está disponível
+        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
+            // Caso o sourceType esteja disponível
+            
+            // Atribuindo o sourceType
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            
+            // Apresentando o picker em tela
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }else{
+            // Caso o sourceType não esteja disponível
+            
+            let alerta = UIAlertController(title: "Alerta", message: "O Photo Library não está disponível, por isso não será possível exibi-lo!", preferredStyle: .alert)
+            
+            let acaoOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alerta.addAction(acaoOk)
+            
+            self.present(alerta, animated: true, completion: nil)
+            
+        }
+        
+    }
+    @IBAction func abrirCamera(_ sender: AnyObject) {
+    }
+    @IBAction func salvarAlbum(_ sender: AnyObject) {
+    }
+    @IBAction func salvarDocuments(_ sender: AnyObject) {
+    }
+    @IBAction func recuperarImagemSalva(_ sender: AnyObject) {
+    }
+
 
 
 }
