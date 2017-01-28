@@ -63,13 +63,79 @@ class ViewController: UIViewController, CNContactPickerDelegate {
     }
     @IBAction func apagar(_ sender: AnyObject) {
         
+        self.isSelecting = false
         
+        let contactPicker = CNContactPickerViewController()
+        
+        contactPicker.delegate = self
+        
+        self.nome.text = ""
+        
+        self.sobrenome.text = ""
+        
+        self.telefone.text = ""
+        
+        self.present(contactPicker, animated: true, completion: nil)
         
     }
     @IBAction func novoContato(_ sender: AnyObject) {
         
+        let alerta = UIAlertController(title: "Criar Contato", message: "Insira os dados para criar um novo contato", preferredStyle: .alert)
         
+        let acaoOk = UIAlertAction(title: "Ok", style: .default) { (acao) in
+            
+            // Fix this forced unwrap
+            let nome = alerta.textFields![0].text
+            let sobrenome = alerta.textFields![1].text
+            let telefone = alerta.textFields![2].text
+            
+            if !(nome!.isEmpty || sobrenome!.isEmpty || telefone!.isEmpty) {
+                
+                // Criando um novo contato
+                let novoContato = CNMutableContact()
+                
+                novoContato.givenName = nome!
+                novoContato.familyName = sobrenome!
+                novoContato.phoneNumbers = [CNLabeledValue(label:"home", value: CNPhoneNumber(stringValue: telefone!))]
+                
+                let contactStore = CNContactStore()
+                let saveRequest = CNSaveRequest()
+                
+                saveRequest.add(novoContato, toContainerWithIdentifier: nil)
+                
+                try? contactStore.execute(saveRequest)
+                
+            }else{
+                
+                // Caso esteja vazio
+                
+                let alerta = UIAlertController(title: "Alerta", message: "Preencha todos os campos!", preferredStyle: .alert)
+                
+                let acaoOk2 = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                
+                alerta.addAction(acaoOk2)
+                
+                self.present(alerta, animated: true, completion: nil)
+                
+            }
+            
+        }
         
+        let acaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        alerta.addAction(acaoOk)
+        alerta.addAction(acaoCancelar)
+        alerta.addTextField { (textField) in
+            textField.placeholder = "Nome"
+        }
+        alerta.addTextField { (textField) in
+            textField.placeholder = "Sobrenome"
+        }
+        alerta.addTextField { (textField) in
+            textField.placeholder = "Telefone"
+        }
+        
+        self.present(alerta, animated: true, completion: nil)
     }
 
     // MARK: - CNContactPickerDelegate Methods
@@ -100,7 +166,15 @@ class ViewController: UIViewController, CNContactPickerDelegate {
         }else{
             
             // caso ele queira apagar
+            let saveRequest = CNSaveRequest()
+            let contatoParaDeletar = contact.mutableCopy() as! CNMutableContact
+            saveRequest.delete(contatoParaDeletar)
             
+            do{
+            
+                try contactStore.execute(saveRequest)
+            
+            }catch{}
         }
         
         picker.dismiss(animated: true, completion: nil)
