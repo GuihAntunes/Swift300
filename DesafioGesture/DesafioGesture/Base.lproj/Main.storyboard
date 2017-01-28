@@ -32,6 +32,9 @@
                             <constraint firstItem="HNg-d1-nzm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CRb-1Z-Twj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="littleView" destination="HNg-d1-nzm" id="8sh-lT-Iiy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
