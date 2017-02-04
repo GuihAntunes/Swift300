@@ -27,6 +27,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var gpsManager = CLLocationManager()
     
+    
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,22 +80,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBAction func changeToChui(_ sender: UIBarButtonItem) {
         
-        let region = MKCoordinateRegion(center: chuiCoordinates, span: span)
-        
-        self.map.setRegion(region, animated: true)
+        let regionChui = MKCoordinateRegion(center: chuiCoordinates, span: span)
+        self.map.setRegion(regionChui, animated: true)
         
     }
     @IBAction func changeToOiapoque(_ sender: UIBarButtonItem) {
         
-        let region = MKCoordinateRegion(center: oiapoqueCoordinates, span: span)
-        
-        self.map.setRegion(region, animated: true)
+        let regionOiapoque = MKCoordinateRegion(center: oiapoqueCoordinates, span: span)
+        self.map.setRegion(regionOiapoque, animated: true)
         
     }
-    
-    
-    
-
 
 }
 
