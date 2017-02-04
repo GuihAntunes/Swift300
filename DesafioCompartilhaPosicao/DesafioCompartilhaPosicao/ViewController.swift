@@ -23,9 +23,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     
     var gpsManager = CLLocationManager()
     
-    var actualLat = 0.0
+    var actualLat = -23.565811
     
-    var actualLong = 0.0
+    var actualLong = -46.652478
     
 
     // MARK: - View Life Cycle
@@ -35,6 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
         self.gpsManager.desiredAccuracy = kCLLocationAccuracyBest
         
         let initialCoordinates = CLLocationCoordinate2D(latitude: -23.565811, longitude: -46.652478)
+        
+        self.latlongLabel.text = "Lat: \(self.actualLat) Long: \(self.actualLong)"
         
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         
