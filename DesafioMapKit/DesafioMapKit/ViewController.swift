@@ -39,22 +39,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.map.setRegion(region, animated: true)
         
-        let oiapoquePin = MKPointAnnotation()
+        setPin(coordinates: oiapoqueCoordinates, title: "Oiapoque")
         
-        let chuiPin = MKPointAnnotation()
-        
-        oiapoquePin.title = "Oiapoque"
-        
-        chuiPin.title = "Chuí"
-        
-        oiapoquePin.coordinate = oiapoqueCoordinates
-        
-        chuiPin.coordinate = chuiCoordinates
-        
-        self.map.addAnnotation(oiapoquePin)
-        
-        self.map.addAnnotation(chuiPin)
-        
+        setPin(coordinates: chuiCoordinates, title: "Chuí")
         
     }
 
@@ -64,6 +51,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK: - Methods
+    
+    func setPin(coordinates:CLLocationCoordinate2D, title:String) {
+        
+        let pin = MKPointAnnotation()
+        pin.title = title
+        pin.coordinate = coordinates
+        self.map.addAnnotation(pin)
+        
+    }
     
     // MARK: - Actions
     @IBAction func mapType(_ sender: UISegmentedControl) {
