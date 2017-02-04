@@ -35,12 +35,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let initialRegion = MKCoordinateRegion(center: initialCoordinates, span: span)
         
         self.map.setRegion(initialRegion, animated: true)
-        
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse){
             
-            self.gpsManager.requestWhenInUseAuthorization()
+        self.gpsManager.requestWhenInUseAuthorization()
             
-        }
+
         
     }
 
@@ -77,6 +75,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            
+            self.latlongLabel.text = "Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)"
             
             self.map.setRegion(region, animated: true)
             
