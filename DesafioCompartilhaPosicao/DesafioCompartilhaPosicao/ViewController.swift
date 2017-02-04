@@ -40,10 +40,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
         
         self.map.setRegion(initialRegion, animated: true)
             
-        self.gpsManager.requestWhenInUseAuthorization()
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
             
-
-        
+            self.gpsManager.requestWhenInUseAuthorization()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,16 +57,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     // MARK: - Actions
     @IBAction func trackPosition(_ sender: UIBarButtonItem) {
         
-        self.gpsManager.delegate = self
-        
-        self.map.showsUserLocation = true
-        
-        self.gpsManager.startUpdatingLocation()
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
+            
+            self.gpsManager.requestWhenInUseAuthorization()
+            
+        }
+            self.gpsManager.delegate = self
+            
+            self.map.showsUserLocation = true
+            
+            self.gpsManager.startUpdatingLocation()
         
     }
     
     @IBAction func sharePositionWithEmail(_ sender: UIBarButtonItem) {
-        
+  
         if (MFMailComposeViewController.canSendMail()) {
             
             let mailCompose = MFMailComposeViewController()
@@ -113,6 +119,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
         }
 
     }
+    
     
     // MARK: - MFMailComposeViewControllerDelegate Methods
     
@@ -169,4 +176,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     
     
 }
-
