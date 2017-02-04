@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-Zb-foD">
-                                <rect key="frame" x="180" y="173" width="15" height="320"/>
+                                <rect key="frame" x="180" y="233" width="15" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-6E-mcE">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="20"/>
@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8Vv-6E-mcE" secondAttribute="trailing" id="9Rs-1c-2SJ"/>
                                     <constraint firstAttribute="width" constant="15" id="I6c-Ce-rLN"/>
-                                    <constraint firstAttribute="height" constant="320" id="RPd-yE-76p"/>
+                                    <constraint firstAttribute="height" constant="200" id="RPd-yE-76p"/>
                                     <constraint firstItem="8Vv-6E-mcE" firstAttribute="leading" secondItem="XWr-Zb-foD" secondAttribute="leading" id="U7h-k8-OOn"/>
                                     <constraint firstItem="8Vv-6E-mcE" firstAttribute="top" secondItem="XWr-Zb-foD" secondAttribute="top" id="Xrz-za-b7B"/>
                                 </constraints>
@@ -93,6 +93,9 @@
                             <constraint firstItem="XWr-Zb-foD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wiv-Lt-E69"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="needleView" destination="XWr-Zb-foD" id="crN-sV-er5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,17 +7,27 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Outlets
+    @IBOutlet weak var needleView: UIView!
     
     // MARK: - Properties
+    
+    let locationManager = CLLocationManager()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        
+        self.locationManager.delegate = self
+        
+        locationManager.startUpdatingHeading()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +37,21 @@ class ViewController: UIViewController {
     
     // MARK: - Methods
     
+    
+    
     // MARK: - Actions
+    
+    // MARK: - CLLocationManagerDelegate Methods
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        
+        // Resgatando o ângulo baseado no norte
+        let angle = newHeading.magneticHeading
+        let radianus = angle * M_PI / 180
+        
+        self.needleView.transform = CGAffineTransform(rotationAngle: CGFloat(radianus))
+        
+    }
 
 
 }
