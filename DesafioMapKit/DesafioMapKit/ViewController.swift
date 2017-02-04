@@ -23,7 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let oiapoqueCoordinates = CLLocationCoordinate2D(latitude: 3.360750, longitude: -52.146150)
     
-    let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+    let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     
     var gpsManager = CLLocationManager()
     
