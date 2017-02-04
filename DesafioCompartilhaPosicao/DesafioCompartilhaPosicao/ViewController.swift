@@ -13,7 +13,7 @@ import MessageUI
 
 // Latitude e longitude iniciais = -23.565811, -46.652478
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MFMailComposeViewControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var map: MKMapView!
@@ -22,6 +22,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Properties
     
     var gpsManager = CLLocationManager()
+    
+    var actualLat = 0.0
+    
+    var actualLong = 0.0
     
 
     // MARK: - View Life Cycle
@@ -62,7 +66,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func sharePositionWithEmail(_ sender: UIBarButtonItem) {
         
-        
+        if (MFMailComposeViewController.canSendMail()) {
+            
+            let mailCompose = MFMailComposeViewController()
+            
+            mailCompose.setSubject("Ei estou aqui")
+            
+            mailCompose.setMessageBody("<strong><i> Estou na latitude: \(self.actualLat) e na longitude: \(self.actualLong)</i></strong>", isHTML: true)
+            
+            let arrayMailTo = ["brother@gmail.com", "jovem@gmail.com", "outrojovem@gmail.com"]
+            
+            mailCompose.setToRecipients(arrayMailTo)
+            
+        }else{
+            
+            let alert = UIAlertController(title: "Alerta!", message: "Não é possível enviar e-mails neste momento. Boa sorte aí brother!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -71,6 +97,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.last {
+            
+            self.actualLat = location.coordinate.latitude
+            
+            self.actualLong = location.coordinate.longitude
             
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             
@@ -81,11 +111,62 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.map.setRegion(region, animated: true)
             
         }
-        
-        
 
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate Methods
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result {
+        case .sent:
+            controller.dismiss(animated: true, completion: nil)
+            // Refactor this
+            let alert = UIAlertController(title: "E-mail enviado!", message: "Aguenta que o brother tá vinu!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        case .saved:
+            controller.dismiss(animated: true, completion: nil)
+            // Refactor this
+            let alert = UIAlertController(title: "E-mail salvo!", message: "Vai esperar pra pedir ajuda pro brother memo, tá certo!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Vou sim", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        case .failed:
+            controller.dismiss(animated: true, completion: nil)
+            // Refactor this
+            let alert = UIAlertController(title: "Alerta!", message: "Não rolou pedir ajuda. Boa sorte aí brother!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        case .cancelled:
+            controller.dismiss(animated: true, completion: nil)
+            // Refactor this
+            let alert = UIAlertController(title: "Boa mlk!", message: "Já se achou né jovem? Monstro!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         
     }
+    
     
 }
 
