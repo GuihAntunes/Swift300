@@ -1,26 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioCompartilhaPosicao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jX4-qr-AJF">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="331"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6k-Cm-946">
+                                <rect key="frame" x="0.0" y="331" width="667" height="44"/>
+                                <items>
+                                    <barButtonItem title="Rastrear Posição" id="oap-Ap-WtN">
+                                        <connections>
+                                            <action selector="trackPosition:" destination="BYZ-38-t0r" id="jym-87-dFZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HUn-P3-97Z"/>
+                                    <barButtonItem title="Compartilhar Posição" id="zqu-iM-79m">
+                                        <connections>
+                                            <action selector="sharePositionWithEmail:" destination="BYZ-38-t0r" id="k06-DU-mvX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude e longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apG-fz-gGa">
+                                <rect key="frame" x="257" y="295" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jX4-qr-AJF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="042-eF-eb1"/>
+                            <constraint firstItem="U6k-Cm-946" firstAttribute="top" secondItem="apG-fz-gGa" secondAttribute="bottom" constant="15" id="0Ax-TZ-XfF"/>
+                            <constraint firstAttribute="trailing" secondItem="jX4-qr-AJF" secondAttribute="trailing" id="19a-ia-e06"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U6k-Cm-946" secondAttribute="bottom" id="JR2-zv-LvM"/>
+                            <constraint firstItem="U6k-Cm-946" firstAttribute="top" secondItem="jX4-qr-AJF" secondAttribute="bottom" id="QLh-IE-q14"/>
+                            <constraint firstItem="U6k-Cm-946" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tak-Ax-puX"/>
+                            <constraint firstAttribute="trailing" secondItem="U6k-Cm-946" secondAttribute="trailing" id="imE-U2-h4c"/>
+                            <constraint firstItem="apG-fz-gGa" firstAttribute="centerX" secondItem="U6k-Cm-946" secondAttribute="centerX" id="kcp-Zc-G04"/>
+                            <constraint firstItem="jX4-qr-AJF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qb6-HC-Tqu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="latlongLabel" destination="apG-fz-gGa" id="75s-Mk-A2i"/>
+                        <outlet property="map" destination="jX4-qr-AJF" id="QpM-iM-m2B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.733133433283363" y="24.800000000000001"/>
         </scene>
     </scenes>
 </document>

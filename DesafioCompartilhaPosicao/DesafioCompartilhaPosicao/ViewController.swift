@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
+import MessageUI
 
 class ViewController: UIViewController {
     
     // MARK: - Outlets
+    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var latlongLabel: UILabel!
     
     // MARK: - Properties
 
@@ -28,6 +33,16 @@ class ViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: - Actions
+    @IBAction func trackPosition(_ sender: UIBarButtonItem) {
+        
+        
+        
+    }
+    @IBAction func sharePositionWithEmail(_ sender: UIBarButtonItem) {
+        
+        
+        
+    }
 
 }
 
