@@ -32,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.gpsManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         let initialCoordinates = CLLocationCoordinate2D(latitude: -23.565811, longitude: -46.652478)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
