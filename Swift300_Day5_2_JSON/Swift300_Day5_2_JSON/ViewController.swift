@@ -18,6 +18,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // refactor this
+        let urlJson = Bundle.main.url(forResource: "arquivo", withExtension: "json")!
+        
+        let jsonData : Data = try!  Data(contentsOf: urlJson)
+        
+        do {
+            let jsonParse = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [[String : String]]
+            
+            print(jsonParse)
+        
+        }catch{}
     }
     
     // MARK: - Methods
