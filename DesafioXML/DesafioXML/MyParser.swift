@@ -12,18 +12,38 @@ class MyParser: NSObject, XMLParserDelegate {
     
     // MARK: - Properties
     
-    var array : [Dictionary<String,String>] = []
-    var studentDictionary = [String : String]()
-    var actualTag = ""
-    var tagContent = ""
+    private var array : [Dictionary<String,String>] = []
+    private var studentDictionary = [String : String]()
+    private var actualTag = ""
+    private var tagContent = ""
     
-    //MARK: - General Methods
+    // MARK: - Delegate Propertie
+    
+    var delegate : MyParserDelegate?
+
+    // MARK: - General Methods
+    
+    func getArray() -> [Dictionary<String,String>] {
+        return array
+    }
     
     func cleanVariables(){
         
         self.actualTag = ""
         self.tagContent = ""
         
+    }
+    
+    func initiateParse() {
+        
+        guard let filePath = Bundle.main.url(forResource: "dados", withExtension: "xml") else { return }
+            
+        let xmlParser = XMLParser(contentsOf: filePath)
+            
+        xmlParser?.delegate = self
+        
+        xmlParser?.parse()
+
     }
     
     // MARK: - XMLParserDelegate Methods
@@ -81,9 +101,15 @@ class MyParser: NSObject, XMLParserDelegate {
     
     func parserDidEndDocument(_ parser: XMLParser) {
         
-        print(array)
+        self.delegate?.myParserAlreadyFinished(self.array)
         
     }
 
 
+}
+
+protocol MyParserDelegate {
+    
+    func myParserAlreadyFinished(_ result : [Dictionary<String, String>])
+    
 }

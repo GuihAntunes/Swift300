@@ -1,5 +1,5 @@
 //
-//  MyTableViewCell.swift
+//  CustomCell.swift
 //  DesafioXML
 //
 //  Created by Swift on 11/02/17.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MyTableViewCell: UITableViewCell {
-    
-    // MARK: - Outlets
+class CustomCell: UITableViewCell {
+
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var studentAge: UILabel!
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +24,5 @@ class MyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
