@@ -17,4 +17,8 @@
         <nome>Florisvaldo</nome>
         <idade>25</idade>
     </aluno>
+    <aluno>
+        <nome>João</nome>
+        <idade>32</idade>
+    </aluno>
 </pessoas>

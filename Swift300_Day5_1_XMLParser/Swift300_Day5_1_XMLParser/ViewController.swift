@@ -51,7 +51,16 @@ class ViewController: UIViewController, XMLParserDelegate {
     // Este método é disparado sempre que uma abertura de tag é encontrada
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
-        print("didStartElement - Abriu uma tag")
+        print("didStartElement - Abriu uma tag: \(elementName)")
+        
+        self.tagAtual = elementName
+        
+        // Se na abertura de tags, a tag tiver conteúdo expressivo, limpamos o nosso conteúdo tag.
+        if elementName == "nome" || elementName == "idade" {
+            
+            self.conteudoTag = ""
+            
+        }
         
     }
     
@@ -60,6 +69,39 @@ class ViewController: UIViewController, XMLParserDelegate {
         
         print("didEndElement - Fechou uma tag")
         
+        // Caso encontrarmos uma tag de fechamento de contéudo, armanezenamos o conteúdo encontrado em nosso dicionário
+        
+        // refactor this -> make a switch statement
+        if elementName == "nome" {
+            
+            // Criamos uma chave em nosso dicionário e adicionamos o conteúdo encontrado.
+            self.dicionarioAluno ["nome"] = self.conteudoTag
+            
+            // Limpando as variáveis de controle
+            self.conteudoTag = ""
+            self.tagAtual = ""
+            
+        }
+        
+        if elementName == "idade" {
+            
+            // Criamos uma chave no nosso dicionário e adicionamos o conteúdo encontrado
+            self.dicionarioAluno ["idade"] = self.conteudoTag
+            
+            //Limpando as variáveis de controle
+            self.conteudoTag = ""
+            self.tagAtual = ""
+            
+        }
+        
+        // Caso a tag for Aluno
+        if elementName == "aluno" {
+            
+            // Adicionamos o nosso dicionario em nosso array
+            self.arrayPessoas += [self.dicionarioAluno]
+            
+        }
+        
     }
     
     // Este método é disparado sempre que um conteúdo é encontrado
@@ -67,12 +109,19 @@ class ViewController: UIViewController, XMLParserDelegate {
         
         print("foundCharacters - Encontrou conteúdo")
         
+        if self.tagAtual == "nome" || self.tagAtual == "idade" {
+            
+            self.conteudoTag += string
+            
+        }
+        
     }
     
     // Este método é disparado quando a interpretação do documento é finalizada
     func parserDidEndDocument(_ parser: XMLParser) {
         
         print("parserDidEndDocument - Documento finalizado")
+        print("\n\n\n \(self.arrayPessoas)")
         
     }
     
