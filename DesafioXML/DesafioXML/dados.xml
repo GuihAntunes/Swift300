@@ -21,4 +21,24 @@
         <nome>João</nome>
         <idade>32</idade>
     </aluno>
+    <aluno>
+        <nome>Fernanda</nome>
+        <idade>12</idade>
+    </aluno>
+    <aluno>
+        <nome>Guilherme</nome>
+        <idade>24</idade>
+    </aluno>
+    <aluno>
+        <nome>Marianne</nome>
+        <idade>29</idade>
+    </aluno>
+    <aluno>
+        <nome>Felipe</nome>
+        <idade>27</idade>
+    </aluno>
+    <aluno>
+        <nome>João Junior</nome>
+        <idade>30</idade>
+    </aluno>
 </pessoas>
