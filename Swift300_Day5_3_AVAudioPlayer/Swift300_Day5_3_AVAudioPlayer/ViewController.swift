@@ -32,11 +32,6 @@ class ViewController: UIViewController {
         
         self.labelRate.text = ""
         
-    }
-    
-    // MARK: - Actions
-    @IBAction func play(_ sender: UIButton) {
-        
         // Criando o caminho para o resgate do arquivo
         let filePath = Bundle.main.path(forResource: "dubstep", ofType: "m4a")
         
@@ -47,6 +42,11 @@ class ViewController: UIViewController {
         
         // Propriedade que define o número de vezes que o audio irá ocorrer
         self.myPlayer.numberOfLoops = 2
+        
+    }
+    
+    // MARK: - Actions
+    @IBAction func play(_ sender: UIButton) {
         
         // ==========
         
@@ -68,20 +68,32 @@ class ViewController: UIViewController {
         // Método que prepara o device
         self.myPlayer.prepareToPlay()
         
+        self.myPlayer.enableRate = true
+        
         // Dando o play
         self.myPlayer.play()
         
     }
     
     @IBAction func pause(_ sender: UIButton) {
-        
-        
+
+        if let _ = self.myPlayer {
+            
+            if self.myPlayer.isPlaying{
+                
+                self.myPlayer.pause()
+                
+            }
+            
+        }
         
     }
     
     @IBAction func changeRate(_ sender: UISlider) {
         
+        self.myPlayer.rate = (sender.value * 4.0)
         
+        self.labelRate.text = String(format: "%.2f", sender.value * 4.0)
         
     }
     
