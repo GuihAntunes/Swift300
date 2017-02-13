@@ -61,16 +61,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MFMailCompose
     // MARK: - Actions
     @IBAction func trackPosition(_ sender: UIBarButtonItem) {
         
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
+        switch CLLocationManager.authorizationStatus() {
+        case .denied, .notDetermined, .restricted:
             
-            self.gpsManager.requestWhenInUseAuthorization()
+            let alert = UIAlertController(title: "Whops!", message: "Não temos autorização para pegar sua localização, mas você pode autorizar se quiser!", preferredStyle: .alert)
             
+            let okAction = UIAlertAction(title: "Ir para Settings", style: .default, handler: { (acao) in
+                
+                
+                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+                
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        default:
+            break
         }
-            self.gpsManager.delegate = self
+        
+        
+        self.gpsManager.delegate = self
             
-            self.map.showsUserLocation = true
+        self.map.showsUserLocation = true
             
-            self.gpsManager.startUpdatingLocation()
+        self.gpsManager.startUpdatingLocation()
         
     }
     
