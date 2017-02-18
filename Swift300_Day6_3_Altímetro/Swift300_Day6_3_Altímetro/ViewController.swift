@@ -7,19 +7,41 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var labelRelativeAltitude: UILabel!
+    @IBOutlet weak var labelPressure: UILabel!
+    
+    // MARK: - Properties
+    
+    let altimetro = CMAltimeter()
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    @IBAction func ligarAltimetro(_ sender: UIButton) {
+        
+        if CMAltimeter.isRelativeAltitudeAvailable(){
+            
+            self.altimetro.startRelativeAltitudeUpdates(to: OperationQueue.main, withHandler: { (data, error) in
+                
+                self.labelRelativeAltitude.text = "\(data!.relativeAltitude)m"
+                self.labelPressure.text = "\(data!.pressure) kPA"
+                
+            })
+            
+        }
+        
     }
-
-
+    
 }
 
