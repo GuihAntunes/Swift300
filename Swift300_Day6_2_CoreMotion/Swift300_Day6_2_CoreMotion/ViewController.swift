@@ -32,6 +32,10 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
+    // Criando o objeto da classe que gerencia o acesso aos sensores
+    
+    let motionManager : CMMotionManager = CMMotionManager()
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +47,48 @@ class ViewController: UIViewController {
     // MARK: - Actions
     @IBAction func start(_ sender: UIButton) {
         
+        // Acelerômetro
+
+        // Verificando se o acelerômetro está disponível
+        if motionManager.isAccelerometerAvailable {
+            
+            motionManager.accelerometerUpdateInterval = 0.01
+            
+            motionManager.startAccelerometerUpdates(to: OperationQueue.main, withHandler: { (data, error) in
+                
+                self.labelX.text = "\(data!.acceleration.x)"
+                self.labelY.text = "\(data!.acceleration.y)"
+                self.labelZ.text = "\(data!.acceleration.z)"
+                
+                self.progressX.progress = Float(data!.acceleration.x)
+                self.progressY.progress = Float(data!.acceleration.y)
+                self.progressZ.progress = Float(data!.acceleration.z)
+                
+            })
+            
+        }
         
+        
+        // Giroscópio
+        
+        if motionManager.isDeviceMotionAvailable {
+            
+            motionManager.deviceMotionUpdateInterval = 0.01
+            
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (data, error) in
+                
+                self.labelRoll.text = "\(data!.attitude.roll)"
+                self.labelYaw.text = "\(data!.attitude.yaw)"
+                self.labelPitch.text = "\(data!.attitude.pitch)"
+                
+                self.progressRoll.progress = Float(data!.attitude.roll)
+                self.progressYaw.progress = Float(data!.attitude.yaw)
+                self.progressPitch.progress = Float(data!.attitude.pitch)
+                
+                
+            })
+            
+        }
         
     }
     
