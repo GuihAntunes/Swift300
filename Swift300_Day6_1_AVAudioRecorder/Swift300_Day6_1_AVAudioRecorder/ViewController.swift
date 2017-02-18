@@ -50,20 +50,12 @@ class ViewController: UIViewController {
         do{
             
             try self.recorder = AVAudioRecorder(url: audioUrl, settings: configsDictionary)
-            
-        }catch{}
         
-        // Criando a Audio Session
+            // Criando a Audio Session
         
-        let audioSession = AVAudioSession.sharedInstance()
-        
-        do{
-            
+            let audioSession = AVAudioSession.sharedInstance()
+
             try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            
-        }catch{}
-        
-        do{
             
             try audioSession.setActive(true)
             
@@ -103,14 +95,72 @@ class ViewController: UIViewController {
     
     @IBAction func play(_ sender: UIButton) {
         
+        // Verificando se o arquivo existe
         
+        if FileManager.default.fileExists(atPath: filePath) {
+            
+            // Refactor this verification 👇🏻
+            // Verificando se ainda está sendo gravado
+            
+            guard let _ = self.recorder else {
+                return
+            }
+            
+            if self.recorder.isRecording {
+                
+                self.recorder.stop()
+                
+            }
+            
+            let audioUrl = URL(fileURLWithPath: filePath)
+            
+            // Iniciando nosso player baseado na URL
+            
+            do{
+                
+                try self.myPlayer = AVAudioPlayer(contentsOf: audioUrl)
+                
+                // Resgatando a instância compartilhada da nossa session de áudio
+                let audioSession = AVAudioSession.sharedInstance()
+                
+                // Setando a categoria da nossa session de áudio
+                try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                
+                // Ativando a session de áudio
+                try audioSession.setActive(true)
+                
+            }catch{}
+            
+            self.myPlayer.prepareToPlay()
+            self.myPlayer.play()
+            
+        }else{
+            
+            let alert = UIAlertController(title: "Warning!", message: "The file doesn't exist! Recording something to reproduce audio!", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     
     @IBAction func pause(_ sender: UIButton) {
         
+        // Verificando se o player está instanciado
+        guard let _ = self.myPlayer else {
+            return
+        }
         
-        
+        if self.myPlayer.isPlaying {
+    
+            self.myPlayer.pause()
+            
+        }
+
     }
         
 }
