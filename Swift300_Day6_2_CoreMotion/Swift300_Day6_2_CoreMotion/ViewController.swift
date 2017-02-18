@@ -77,6 +77,14 @@ class ViewController: UIViewController {
             
             motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (data, error) in
                 
+                /*
+                 
+                 Row - Intervalo considerado de -3 a 3
+                 Yaw - Intervalo considerado de -3 a 3
+                 Pitch - Intervalo considerado de -1.5 a 1.5
+                 
+                 */
+                
                 self.labelRoll.text = "\(data!.attitude.roll)"
                 self.labelYaw.text = "\(data!.attitude.yaw)"
                 self.labelPitch.text = "\(data!.attitude.pitch)"
