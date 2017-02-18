@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,6 +42,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="7SP-vY-UnT" secondAttribute="bottom" id="E4U-Wm-tdf"/>
                             <constraint firstAttribute="trailing" secondItem="7SP-vY-UnT" secondAttribute="trailing" id="aII-vM-Ddy"/>
@@ -59,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--New Record View Controller-->
         <scene sceneID="9Is-67-BHX">
             <objects>
-                <viewController id="DCE-BO-Hdu" sceneMemberID="viewController">
+                <viewController id="DCE-BO-Hdu" customClass="NewRecordViewController" customModule="DesafioGravador" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HVd-m3-wgD"/>
                         <viewControllerLayoutGuide type="bottom" id="8JO-ib-87v"/>
@@ -71,28 +73,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chegou!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-yW-ClB">
-                                <rect key="frame" x="155" y="323" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie uma nova gravação" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Va-X4X">
+                                <rect key="frame" x="99" y="114" width="178.5" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-KK-PGK">
+                                <rect key="frame" x="83" y="214" width="210" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Fw8-oL-SlV"/>
+                                    <constraint firstAttribute="height" constant="30" id="jUk-Et-I5S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Iniciar Gravação">
+                                    <color key="titleColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRecord:" destination="DCE-BO-Hdu" eventType="touchUpInside" id="sMW-ad-C5o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-cI-fKF">
+                                <rect key="frame" x="83" y="414" width="210" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Zg-Rh-UYj"/>
+                                    <constraint firstAttribute="width" constant="210" id="Mzd-Xz-dWy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="Parar Gravação">
+                                    <color key="titleColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecord:" destination="DCE-BO-Hdu" eventType="touchUpInside" id="G74-ZJ-mxI"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ikP-W1-XOK">
+                                <rect key="frame" x="16" y="332" width="343" height="2"/>
+                            </progressView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Mcv-yW-ClB" firstAttribute="centerY" secondItem="4hT-z4-BT4" secondAttribute="centerY" id="H7n-z1-ZMB"/>
-                            <constraint firstItem="Mcv-yW-ClB" firstAttribute="centerX" secondItem="4hT-z4-BT4" secondAttribute="centerX" id="Ipd-Ay-Xci"/>
+                            <constraint firstItem="ikP-W1-XOK" firstAttribute="trailing" secondItem="4hT-z4-BT4" secondAttribute="trailingMargin" id="3Ca-sT-cvI"/>
+                            <constraint firstItem="ikP-W1-XOK" firstAttribute="leading" secondItem="4hT-z4-BT4" secondAttribute="leadingMargin" id="46k-Mg-BjR"/>
+                            <constraint firstItem="ikP-W1-XOK" firstAttribute="centerX" secondItem="4hT-z4-BT4" secondAttribute="centerX" id="5hA-Qi-eWj"/>
+                            <constraint firstItem="ikP-W1-XOK" firstAttribute="centerY" secondItem="4hT-z4-BT4" secondAttribute="centerY" id="8z5-mh-JkT"/>
+                            <constraint firstItem="gvR-cI-fKF" firstAttribute="top" secondItem="ikP-W1-XOK" secondAttribute="bottom" constant="80" id="TVh-Q5-WCk"/>
+                            <constraint firstItem="QwR-KK-PGK" firstAttribute="centerX" secondItem="t57-Va-X4X" secondAttribute="centerX" id="YUr-et-sll"/>
+                            <constraint firstItem="t57-Va-X4X" firstAttribute="top" secondItem="HVd-m3-wgD" secondAttribute="bottom" constant="50" id="gy1-h1-MCA"/>
+                            <constraint firstItem="gvR-cI-fKF" firstAttribute="centerX" secondItem="ikP-W1-XOK" secondAttribute="centerX" id="khB-1O-Ex3"/>
+                            <constraint firstItem="QwR-KK-PGK" firstAttribute="top" secondItem="t57-Va-X4X" secondAttribute="bottom" constant="80" id="tqO-TG-s6G"/>
+                            <constraint firstItem="t57-Va-X4X" firstAttribute="centerX" secondItem="4hT-z4-BT4" secondAttribute="centerX" id="yQb-yt-cfq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordProgressView" destination="ikP-W1-XOK" id="H20-0q-KPh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTc-xB-Dmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="-63"/>
+            <point key="canvasLocation" x="1976.8" y="-63.418290854572717"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Files View Controller-->
         <scene sceneID="yI5-Gr-irZ">
             <objects>
-                <viewController id="JYd-0j-dhH" sceneMemberID="viewController">
+                <viewController id="JYd-0j-dhH" customClass="RecordFilesViewController" customModule="DesafioGravador" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d1N-X7-SMz"/>
                         <viewControllerLayoutGuide type="bottom" id="70k-cw-Djk"/>
@@ -101,17 +147,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chegou!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Zg-KEa">
-                                <rect key="frame" x="155" y="323" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-QG-buR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recordFilesCell" id="hj2-9s-V2I">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hj2-9s-V2I" id="fRL-bt-wAz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="v1X-9a-xMP" kind="show" id="7WR-oJ-4qI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g8T-Zg-KEa" firstAttribute="centerY" secondItem="soP-TX-mmp" secondAttribute="centerY" id="A0J-Eq-gvq"/>
-                            <constraint firstItem="g8T-Zg-KEa" firstAttribute="centerX" secondItem="soP-TX-mmp" secondAttribute="centerX" id="KZh-Jy-hEW"/>
+                            <constraint firstItem="UXk-QG-buR" firstAttribute="leading" secondItem="soP-TX-mmp" secondAttribute="leading" id="07X-qv-2M0"/>
+                            <constraint firstAttribute="trailing" secondItem="UXk-QG-buR" secondAttribute="trailing" id="76a-Ae-c1h"/>
+                            <constraint firstAttribute="bottom" secondItem="UXk-QG-buR" secondAttribute="bottom" id="sHd-kR-NMp"/>
+                            <constraint firstItem="UXk-QG-buR" firstAttribute="top" secondItem="soP-TX-mmp" secondAttribute="top" id="ten-CK-RQW"/>
                         </constraints>
                     </view>
                 </viewController>

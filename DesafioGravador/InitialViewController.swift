@@ -70,7 +70,23 @@ class InitialViewController: UIViewController, UITableViewDelegate, UITableViewD
         case 1:
             self.performSegue(withIdentifier: "recordsFilesSegue", sender: nil)
         case 2:
-            print("To do the exclusion method!")
+            
+            if !recordsDictionaryIsEmpty(){
+                
+                print("The file exists!")
+                
+            }else{
+                
+                let alert = UIAlertController(title: "Alerta!", message: "Não há gravações para serem apagadas.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                
+                alert.addAction(okAction)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
         default:
             break
         }

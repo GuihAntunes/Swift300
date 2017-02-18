@@ -13,6 +13,9 @@
 		433FC1B11E587EA200E9C31D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433FC1AF1E587EA200E9C31D /* LaunchScreen.storyboard */; };
 		433FC1BC1E587F4B00E9C31D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FC1BB1E587F4B00E9C31D /* InitialViewController.swift */; };
 		433FC1BE1E5884A500E9C31D /* Globais.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FC1BD1E5884A500E9C31D /* Globais.swift */; };
+		433FC1C01E58A0F600E9C31D /* RecordFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FC1BF1E58A0F600E9C31D /* RecordFilesViewController.swift */; };
+		433FC1C21E58A26C00E9C31D /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FC1C11E58A26C00E9C31D /* RecordDetailViewController.swift */; };
+		433FC1C41E58A5D600E9C31D /* NewRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FC1C31E58A5D600E9C31D /* NewRecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		433FC1B21E587EA200E9C31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		433FC1BB1E587F4B00E9C31D /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialViewController.swift; path = ../InitialViewController.swift; sourceTree = "<group>"; };
 		433FC1BD1E5884A500E9C31D /* Globais.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globais.swift; sourceTree = "<group>"; };
+		433FC1BF1E58A0F600E9C31D /* RecordFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordFilesViewController.swift; path = ../RecordFilesViewController.swift; sourceTree = "<group>"; };
+		433FC1C11E58A26C00E9C31D /* RecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
+		433FC1C31E58A5D600E9C31D /* NewRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				433FC1B81E587EAE00E9C31D /* Layout */,
 				433FC1A61E587EA200E9C31D /* AppDelegate.swift */,
 				433FC1BB1E587F4B00E9C31D /* InitialViewController.swift */,
+				433FC1BF1E58A0F600E9C31D /* RecordFilesViewController.swift */,
+				433FC1C11E58A26C00E9C31D /* RecordDetailViewController.swift */,
+				433FC1C31E58A5D600E9C31D /* NewRecordViewController.swift */,
 				433FC1BD1E5884A500E9C31D /* Globais.swift */,
 			);
 			path = DesafioGravador;
@@ -164,9 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433FC1C41E58A5D600E9C31D /* NewRecordViewController.swift in Sources */,
 				433FC1A71E587EA200E9C31D /* AppDelegate.swift in Sources */,
 				433FC1BE1E5884A500E9C31D /* Globais.swift in Sources */,
+				433FC1C21E58A26C00E9C31D /* RecordDetailViewController.swift in Sources */,
 				433FC1BC1E587F4B00E9C31D /* InitialViewController.swift in Sources */,
+				433FC1C01E58A0F600E9C31D /* RecordFilesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
