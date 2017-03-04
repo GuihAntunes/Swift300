@@ -18,21 +18,45 @@ class NewRecordViewController: UIViewController {
     
     var recorder:AVAudioRecorder!
     var titulo = ""
+    var timer : Timer!
+    var progress : Float = 0.0
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+        
     }
     
     // MARK: - Methods
     
+    func setup() {
+        
+        
+    }
+    
+    func updateProgress() {
+        
+        self.progress = self.progress + 0.1
+        self.recordProgressView.setProgress(self.progress, animated: true)
+        
+        if self.progress >= 1 {
+            
+            self.timer.invalidate()
+            self.progress = 0.0
+            self.recordProgressView.progress = 0.0
+            
+        }
+        
+    }
+    
     // MARK: - Actions
     @IBAction func startRecord(_ sender: UIButton) {
         
-        guard let _ = self.recorder else {
-            return
-        }
+//        guard let _ = self.recorder else {
+//            return
+//        }
         
         let alert = UIAlertController(title: "Definição de Título", message: "Defina o título da sua gravação", preferredStyle: .alert)
         
@@ -40,60 +64,73 @@ class NewRecordViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "Ok", style: .default) { (acao) in
             
-            guard case self.titulo? = alert.textFields?[0].text else {
-                return
-            }
+            let textField = alert.textFields![0]
+            
+            // TODO: Unwrap this optional
+            self.titulo = textField.text!
             
             if self.titulo.isEmpty {
                 
-                let warning = UIAlertController(title: "Nenhum nome informado!", message: "Digite o nome da gravação", preferredStyle: .alert)
-                
-                let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                
-                warning.addAction(okButton)
-                
-                self.present(warning, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
             }else{
                 
+                let newFile = self.titulo
+                
+                let configsDictionary : Dictionary <String , AnyObject> = [AVEncoderAudioQualityKey : AVAudioQuality.min.rawValue as AnyObject, AVEncoderBitRateKey : 16 as AnyObject, AVNumberOfChannelsKey : 2 as AnyObject, AVSampleRateKey : 44100.0 as AnyObject]
+                
+                self.recorder = try? AVAudioRecorder(url: getARecord(nome: newFile), settings: configsDictionary) // TODO: Verificar casting [String : AnyObject]
+                
+                let audioSession = AVAudioSession.sharedInstance()
+                
+                do{
+                    
+                    try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                    
+                }catch{}
+                
+                do{
+                    
+                    try audioSession.setActive(true)
+                    
+                }catch{}
+                
+                // Preparando pra gravar
+                self.recorder.prepareToRecord()
+                self.recorder.record(forDuration: 10.0)
                 addRecord(nome: self.titulo)
+                
+                let filesToSave = getAllRecords() as NSDictionary
+                filesToSave.write(toFile: self.titulo, atomically: true)
+                
+                self.recordProgressView.progress = 0.0
+                
+                self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(NewRecordViewController.updateProgress), userInfo: nil, repeats: true)
                 
             }
             
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Qual o título desejado?"
         }
         
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         
-        let audioUrl = getARecord(nome: self.titulo)
-        
-        let configsDictionary : Dictionary <String, Any> = [AVEncoderAudioQualityKey : AVAudioQuality.max as Any, AVEncoderBitRateKey : 16 as Any, AVNumberOfChannelsKey : 2, AVSampleRateKey : 44100.0 as Any]
-        
-        do{
-            
-            try self.recorder = AVAudioRecorder(url: audioUrl, settings: configsDictionary)
-            
-            let audioSession = AVAudioSession.sharedInstance()
-            
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            
-            try audioSession.setActive(true)
-            
-        }catch{}
-        
-        self.recorder.prepareToRecord()
-        
-        
-        
-        self.present(alert, animated: true) { 
-            self.recorder.record()
-        }
+        self.present(alert, animated: true, completion: nil)
         
     }
     
     @IBAction func stopRecord(_ sender: UIButton) {
         
+        guard let _ = self.recorder else {
+            return
+        }
         
+        if self.recorder.isRecording {
+            self.recorder.stop()
+        }
         
     }
     

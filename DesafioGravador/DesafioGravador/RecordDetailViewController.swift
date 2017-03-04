@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecordDetailViewController: UIViewController {
     
@@ -25,6 +26,16 @@ class RecordDetailViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: - Actions
+    @IBAction func play(_ sender: UIButton) {
+        
+        
+        
+    }
     
+    @IBAction func stop(_ sender: UIButton) {
+        
+        
+        
+    }
     
 }

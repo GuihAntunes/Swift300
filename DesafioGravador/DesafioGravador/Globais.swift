@@ -8,12 +8,12 @@
 
 import Foundation
 
-var sandBoxPath = NSHomeDirectory()
+private var sandBoxPath = NSHomeDirectory()
 
 var documentsPath = (sandBoxPath as NSString).appendingPathComponent("Documents")
 
 // Refactor this
-private var filePath = ""
+var filePath = ""
 
 private var allRecords:Dictionary <String, URL> = [:]
 
@@ -35,6 +35,10 @@ func removeAllRecords(){
     
     allRecords.removeAll()
     
+}
+
+func getAllRecords() -> Dictionary <String, URL> {
+    return allRecords
 }
 
 func getCountAllRecords() -> Int{
