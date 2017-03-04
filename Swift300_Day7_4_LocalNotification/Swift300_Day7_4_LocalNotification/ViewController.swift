@@ -77,6 +77,18 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
     }
     
+    // MARK: - UNNotificationCenterDelegate
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        
+        if response.actionIdentifier == "relembrar"{
+            
+            let novaData = Date(timeInterval: 61.0, since: Date())
+            
+            self.dispararNotificacao(na: novaData)
+            
+        }
+    }
     
 }
 
