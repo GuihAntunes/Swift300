@@ -14,6 +14,7 @@ class InitialViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var myTableView: UITableView!
         
     // MARK: - Properties
+    var dictionaryOfRecords : Dictionary <String, URL> = [:]
     
     let titles = ["Novas Gravações", "Consultas", "Exclusões"]
     
@@ -71,9 +72,24 @@ class InitialViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.performSegue(withIdentifier: "recordsFilesSegue", sender: nil)
         case 2:
             
-            if !recordsDictionaryIsEmpty(){
+            if FileManager.default.fileExists(atPath: recordsFilePath){
                 
-                print("The file exists!")
+                self.dictionaryOfRecords = NSDictionary(contentsOfFile: recordsFilePath) as! Dictionary<String, URL>
+                
+                let eraseAlert = UIAlertController(title: "Esta ação não pode ser revertida", message: "Deseja apagar todos os dados", preferredStyle: .actionSheet)
+                
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+                
+                let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: { (acao) in
+                    
+                    // TODO: Exclude all records
+                    
+                })
+                
+                eraseAlert.addAction(okAction)
+                eraseAlert.addAction(cancelAction)
+                
+                self.present(eraseAlert, animated: true, completion: nil)
                 
             }else{
                 
@@ -92,5 +108,7 @@ class InitialViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
     }
+    
+    
 
 }

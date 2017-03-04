@@ -20,21 +20,24 @@ class NewRecordViewController: UIViewController {
     var titulo = ""
     var timer : Timer!
     var progress : Float = 0.0
+    var dictionaryOfFiles : NSDictionary = [:]
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(documentsPath)
+        self.recordProgressView.progress = 0.0
         
-        setup()
+        if FileManager.default.fileExists(atPath: recordsFilePath){
+            
+            // Unwrap this
+            self.dictionaryOfFiles = NSDictionary(contentsOfFile: recordsFilePath)!
+            
+        }
         
     }
     
     // MARK: - Methods
-    
-    func setup() {
-        
-        
-    }
     
     func updateProgress() {
         
@@ -54,10 +57,6 @@ class NewRecordViewController: UIViewController {
     // MARK: - Actions
     @IBAction func startRecord(_ sender: UIButton) {
         
-//        guard let _ = self.recorder else {
-//            return
-//        }
-        
         let alert = UIAlertController(title: "Definição de Título", message: "Defina o título da sua gravação", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
@@ -76,6 +75,7 @@ class NewRecordViewController: UIViewController {
             }else{
                 
                 let newFile = self.titulo
+                addRecord(nome: newFile)
                 
                 let configsDictionary : Dictionary <String , AnyObject> = [AVEncoderAudioQualityKey : AVAudioQuality.min.rawValue as AnyObject, AVEncoderBitRateKey : 16 as AnyObject, AVNumberOfChannelsKey : 2 as AnyObject, AVSampleRateKey : 44100.0 as AnyObject]
                 
@@ -98,10 +98,9 @@ class NewRecordViewController: UIViewController {
                 // Preparando pra gravar
                 self.recorder.prepareToRecord()
                 self.recorder.record(forDuration: 10.0)
-                addRecord(nome: self.titulo)
                 
-                let filesToSave = getAllRecords() as NSDictionary
-                filesToSave.write(toFile: self.titulo, atomically: true)
+                let filesToSave = getAllRecords()
+                filesToSave.write(toFile: recordsFilePath, atomically: true)
                 
                 self.recordProgressView.progress = 0.0
                 
@@ -130,6 +129,8 @@ class NewRecordViewController: UIViewController {
         
         if self.recorder.isRecording {
             self.recorder.stop()
+            self.timer.invalidate()
+            self.recordProgressView.progress = 0.0
         }
         
     }

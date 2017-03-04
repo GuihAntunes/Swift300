@@ -13,12 +13,18 @@ class RecordFilesViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Outlets
     
     // MARK: - Properties
+    var dictionaryOfFiles : NSDictionary = [:]
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if recordsDictionaryIsEmpty() {
+        if FileManager.default.fileExists(atPath: recordsFilePath){
+            
+            // Unwrap this
+            self.dictionaryOfFiles = NSDictionary(contentsOfFile: recordsFilePath)!
+            
+        }else{
             
             let alert = UIAlertController(title: "Alerta", message: "Não há gravações salvas", preferredStyle: .alert)
             
@@ -33,6 +39,18 @@ class RecordFilesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: - Methods
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueTelaReproducao" {
+            
+            let targetViewController = segue.destination as! RecordDetailViewController
+            
+            targetViewController.chosenFile = sender as? String
+            
+        }
+        
+    }
     
     // MARK: - Actions
     
@@ -53,9 +71,17 @@ class RecordFilesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getCountAllRecords()
+        return self.dictionaryOfFiles.count
     }
     
     // MARK: - UITableViewDelegate Methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let recordName = self.dictionaryOfFiles[indexPath.row]
+        
+        self.performSegue(withIdentifier: "segueTelaReproducao", sender: recordName)
+        
+    }
     
 }
